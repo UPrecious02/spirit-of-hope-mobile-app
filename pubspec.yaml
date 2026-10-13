@@ -23,3 +23,13 @@ dev_dependencies:
 
 flutter:
   uses-material-design: true
+
+  # Variable fonts bundled from Google Fonts (OFL — licences alongside).
+  # Weights are applied via FontVariation in lib/core/theme/typography.dart.
+  fonts:
+    - family: InterTight
+      fonts:
+        - asset: assets/fonts/inter_tight/InterTight-Variable.ttf
+    - family: GeistMono
+      fonts:
+        - asset: assets/fonts/geist_mono/GeistMono-Variable.ttf
