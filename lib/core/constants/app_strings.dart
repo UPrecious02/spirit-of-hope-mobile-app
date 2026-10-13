@@ -1,6 +1,7 @@
 /// Agency contact details — CLAUDE.md section 1.
 abstract final class AppContact {
-  static const String phoneDisplay = '240-423-3099';
+  /// Non-breaking hyphens (U+2011) so the number never wraps mid-way.
+  static const String phoneDisplay = '240‑423‑3099';
   static const String phoneDial = '2404233099';
 
   /// Digits spaced so screen readers read them one by one.

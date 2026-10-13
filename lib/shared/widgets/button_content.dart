@@ -29,10 +29,14 @@ class ButtonContent extends StatelessWidget {
       label: isLoading
           ? '$spokenLabel${AppStrings.loadingSemanticSuffix}'
           : spokenLabel,
+      // A Wrap, not a Row: at large text scales the icon moves above the
+      // label instead of squeezing it.
       child: ExcludeSemantics(
-        child: Row(
-          mainAxisSize: MainAxisSize.min,
-          mainAxisAlignment: MainAxisAlignment.center,
+        child: Wrap(
+          alignment: WrapAlignment.center,
+          crossAxisAlignment: WrapCrossAlignment.center,
+          spacing: AppSpacing.sm,
+          runSpacing: AppSpacing.xxs,
           children: [
             if (isLoading)
               const SizedBox.square(
@@ -43,9 +47,7 @@ class ButtonContent extends StatelessWidget {
               )
             else if (icon != null)
               Icon(icon),
-            if (isLoading || icon != null)
-              const SizedBox(width: AppSpacing.sm),
-            Flexible(child: Text(label, textAlign: TextAlign.center)),
+            Text(label, textAlign: TextAlign.center),
           ],
         ),
       ),
